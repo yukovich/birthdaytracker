@@ -1,0 +1,4 @@
+/* CSS declarations go here */
+.selected,.panel-heading{
+	background-color: yellow;
+}
