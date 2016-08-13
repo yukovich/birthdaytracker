@@ -157,8 +157,8 @@ if (Meteor.isServer) {
         {
           $match:{
             monthDifference:0,
-            //maybe cos all stored at midnight, so need -1 for them to match.
-            dayOfMonthDifference:-1
+            //seems to need -1 for them to match.
+            dayOfMonthDifference:0
           }
         }
         
@@ -200,7 +200,7 @@ if (Meteor.isServer) {
                 if(error){
                   console.log(error.reason)
                 }else{
-                  Meteor.call("sendMessage",contactName+" has a birthday today",chatId,function(error,result){
+                  Meteor.call("sendMessage",contactName+" has a birthday tomorrow",chatId,function(error,result){
                       if(error){
                         console.log(error.reason);
                       }
@@ -223,7 +223,7 @@ if (Meteor.isServer) {
   SyncedCron.add({
     name:'Send telegram birthday reminders for contacts that have the birthday today',
     schedule: function(parser){
-      return parser.text('at 8:00am');
+      return parser.text('at 11:59pm');
     },
 
     job: function(){

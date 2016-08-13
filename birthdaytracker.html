@@ -7,7 +7,7 @@
   
   {{> navbar}}
   <div class="container">
-  	
+    
     <h1 class = "text-center">Sign In or Sign Up for your Birthday Tracker</h1>
     
 
@@ -24,13 +24,13 @@
 </body>
 
 <template name="navbar">
-	<div class="navbar navbar-default">
-		<div class="navbar-header">
-			<a class="navbar-brand">{{> loginButtons}}</a>
+  <div class="navbar navbar-default">
+    <div class="navbar-header">
+      <a class="navbar-brand">{{> loginButtons}}</a>
 
-		</div>
-		
-	</div>
+    </div>
+    
+  </div>
 
 </template>
 
@@ -38,30 +38,30 @@
   
 
   <div class="panel panel-primary"> 
-	 <div class = "panel-heading">Contacts and Birthdays</div>   
+   <div class = "panel-heading">Contacts and Birthdays</div>   
      <table class = "table">
-     	<thead>
-     		<tr>
-     			<th>#</th>
-     			<th>Name</th>
-     			<th>Birthday</th>
-     		</tr>
-     	</thead>
-     	<tbody>
-	     	{{#each contact}}
-	     	<tr class="contact {{selectedClass}}">	
-	     		<th scope="row">{{plusOne @index}}</th>
-	     		<td>{{name}}</td>
-	     		<td>{{formatDate birthday}}</td>
-	     	</tr>
-	     	{{/each}}
-     	</tbody>
+      <thead>
+        <tr>
+          <th>#</th>
+          <th>Name</th>
+          <th>Birthday</th>
+        </tr>
+      </thead>
+      <tbody>
+        {{#each contact}}
+        <tr class="contact {{selectedClass}}">  
+          <th scope="row">{{plusOne @index}}</th>
+          <td>{{name}}</td>
+          <td>{{formatDate birthday}}</td>
+        </tr>
+        {{/each}}
+      </tbody>
 
      </table>   
-	      
+        
           
     <div class = "panel-footer">  
- 	<button type= "button" class="btn btn-primary remove"> Remove contact</button>  
+  <button type= "button" class="btn btn-primary remove"> Remove contact</button>  
  </div>
   </div>
   
@@ -73,10 +73,10 @@
   
 
   <form>
-		
+    
     <label>Name of Contact:</label>
     <input type="text" name="contactName" class="form-control" placeholder = "Contact Name">
-    	<!--<input type="text" name="contactBirthday" placeholder = "Birthday">-->
+      <!--<input type="text" name="contactBirthday" placeholder = "Birthday">-->
     <label>Birthday of Contact:</label>
     <div class="input-group date" data-provide="datepicker">
       <input type="text" class="form-control" name="contactBirthday">
@@ -84,7 +84,7 @@
           <span class="glyphicon glyphicon-th"></span>
       </div>
     </div>
-		<input type="submit" class="btn btn-success" value="Add Contact">
+    <input type="submit" class="btn btn-success" value="Add Contact">
    </form>
  
 </template>
@@ -94,7 +94,7 @@
     To receive daily birthday reminders through your Telegram app:<br/>
     1. Talk to @YukBot on Telegram. You should receive a "You have been registered" reply.<br />
     2. Enter your Telegram Username below and click on Set Telegram Username to sync your Telegram account with our database.<br/>
-    3. Your birthday reminders will be sent from @YukBot to your Telegram account at 8am every day<br/>
+    3. Your birthday reminders will be sent from @YukBot to your Telegram account at 11.50pm the night before.<br/>
     <label>Telegram Username:</label>
     <input type="text" name="dataTelegramUsername" class="form-control" placeholder = "Telegram Username">
     <input type="submit" class="btn btn-success" value="Set Telegram Username">
